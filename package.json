@@ -1,0 +1,15 @@
+{
+  "name": "playwright-api-test",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@playwright/test": "^1.37.1",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "open": "bunx playwright test --ui"
+  }
+}
