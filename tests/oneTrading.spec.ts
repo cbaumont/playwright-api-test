@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import * as oneTradingApi from './actions/oneTradingApi';
-import { instrumentStatus } from './actions/status';
+import * as oneTradingApi from './api/oneTradingApi.ts';
+import { instrumentStatus } from './api/status.ts';
 
 test('should return list of currencies', async ({ request }) => {
   const currencies = await request.get('public/v1/currencies');
@@ -64,7 +64,7 @@ test('should return invalid instrument code for market ticker', async ({ request
 
 test('should get market ticker for instruments list', async ({ request }) => {
   const instruments = await oneTradingApi.getInstruments(request);
-  for(const instrument of instruments) {
+  for (const instrument of instruments) {
     if (instrument === 'XRP_EUR') {
       const orderBook = await oneTradingApi.getMarketTickerForInstrument(request, instrument);
       console.log(orderBook);
