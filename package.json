@@ -10,6 +10,8 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "open": "bunx playwright test --ui"
+    "open": "bunx playwright test --ui",
+    "report": "bunx playwright show-report",
+    "test:all" : "bunx playwright test"
   }
 }
